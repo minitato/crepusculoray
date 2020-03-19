@@ -22,7 +22,7 @@ public class showGL extends JFrame {
         //capabilities.setNumSamples(2);
         //capabilities.setSampleBuffers(true);
         final GLCanvas glcanvas = new GLCanvas(capabilities);
-        System.out.println("WELCOME ANIMATOR CREPUSCULARES RAY 1.0 by Ivan Diesel");
+        System.out.println("WELCOME ANIMATOR CREPUSCULARES RAY 1.1");
         System.out.println(" PRESS KEY: ");
         System.out.println("  1) Globe: Earth in space");
         System.out.println("  2) Globe: Earth in solo");
@@ -40,7 +40,7 @@ public class showGL extends JFrame {
         System.out.println("  ESC    - Exit.");
         System.out.println("---------------------------------------");
         Board b = new Board(this);
-        this.setName("WELCOME ANIMATOR CREPUSCULARES RAY 1.0 by Ivan Diesel");
+        this.setName("WELCOME ANIMATOR CREPUSCULARES RAY 1.1");
         this.setSize(width, height);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
