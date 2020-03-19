@@ -28,10 +28,6 @@ Height of Cloud: 8km
 
 Observer: 2 m
 
----
-java e openGL
-IDE: Intellij IDEA Community
-
 -------------------
 ##### PRESS KEY: 
 
