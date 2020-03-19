@@ -11,6 +11,7 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 public class Board extends JPanel implements GLEventListener, KeyListener, MouseListener, MouseMotionListener, MouseWheelListener, ComponentListener {
@@ -32,7 +33,7 @@ public class Board extends JPanel implements GLEventListener, KeyListener, Mouse
     boolean optionCloud = false;
     boolean optionScreen = false;
     JFrame frame;
-    private GLU glu = new GLU();
+    private GLU glu;
     private GL2 gl;
     private ArrayList<CloudTP> memoryCLoud;
     private final AniCrepusculares[] aniCrepusculares = new AniCrepusculares[] {
@@ -44,6 +45,7 @@ public class Board extends JPanel implements GLEventListener, KeyListener, Mouse
             new TP_ver_plana_dentro(2)};
 
     private void init() {
+        glu = new GLU();
         setFocusable(true);
         step = 0;
         this.mtx= this.frame.getWidth()/2;
@@ -107,10 +109,11 @@ public class Board extends JPanel implements GLEventListener, KeyListener, Mouse
 
     private void newEarth() {
         try {
-            this.earth[0] = TextureIO.newTexture(new File(getClass().getClassLoader().getResource("EarthMap_2500x1250.jpg").getFile()), true);
-            this.earth[1] = TextureIO.newTexture(new File(getClass().getClassLoader().getResource("flatearth1.png").getFile()), true);
-//            this.earth[0] = TextureIO.newTexture(new File("EarthMap_2500x1250.jpg"), true);
-//            this.earth[1] = TextureIO.newTexture(new File("flatearth1.png"), true);
+            InputStream is;
+            is = this.getClass().getResourceAsStream("/EarthMap_2500x1250.jpg");
+            this.earth[0] = TextureIO.newTexture(is, false, "jpg");
+            is = this.getClass().getResourceAsStream("/flatearth1.png");
+            this.earth[1] = TextureIO.newTexture(is, false, "png");
         }
         catch (IOException e) {
             System.out.println("\n Texture not find.");
@@ -304,4 +307,5 @@ public class Board extends JPanel implements GLEventListener, KeyListener, Mouse
     public void componentHidden(ComponentEvent componentEvent) {
 
     }
+
 }
