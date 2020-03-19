@@ -1,11 +1,12 @@
-ANIMATOR CREPUSCULARES RAY 1.0 by Ivan Diesel
+ANIMATOR CREPUSCULARES RAY 1.1
 ============
 
-Version 1.0
-
-DEV Ivan Rogerio Diesel
+Version 1.1
 
 The objective is to compare the forms of realities of spherical and flat earth with precision measurement.
+
+#### RUN
+mvn install && java -jar crepusculoray-version.jar
 
 #### FLAT EARTH PROFILE
 
